@@ -1,10 +1,15 @@
 /* ------ GLOBAL ------ */
 
-$primary-color:blue;
+html {
+    scroll-behavior: smooth;
+}
+
+
+$primary-color:black;
 $secondary-color:yellow;
 $third-color:#ffffff;
 
-$global-padding: 50px 100px ;
+$global-padding: 50px 120px ;
 $padding:20px;
 $margin-tb: 20px 0px 20px 0px;
 
@@ -15,16 +20,24 @@ $margin-tb: 20px 0px 20px 0px;
     text-decoration: none;
     padding:0;
     font-family: 'Montserrat', 'Helvetica',sans-serif;
-}
+    // font-family:'Helvetica',sans-serif;
 
+}
+body {
+    width:100%;
+    margin:0;
+}
 // Header
 
 header {
-    background-image: url('../img/balises.svg');
-    background-color: #0000ff; /* Remplacez cette couleur par celle que vous souhaitez */
+    background-image: url('../img/balises-blk-gray.svg');
+    background-color: black; /* Remplacez cette couleur par celle que vous souhaitez */
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 130%;
+    background-position: contain;
+    background-size: 120%;
+    background-position-x:-30px;
+    background-position-y:-80px;
+    width:100%;
 }
 
 header *{
@@ -94,10 +107,12 @@ header *{
 .line-menu-1 {
     width: 60px;
     height: 2px;
+
 }
 .line-menu-2 {
     width: 40px;
     height: 2px;
+
 }
 
 // Animation menu
@@ -108,34 +123,32 @@ label.menu {
 }
 
 label.menu div{
-border-radius:15px;
-// transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
-transition-duration: 0.4s;
-background-color: $third-color;
-margin: 6px 0;
+    border-radius:15px;
+    // transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transition-duration: 0.4s;
+    background-color: $third-color;
+    margin: 6px 0;
 }
 
 
 input[type="checkbox"]{
-display:none;
+    display:none;
 }
 
 //  ~ div:nth-of-type(1) le premier frère de l'élément input de type cehckbox checké
 input[type="checkbox"]:checked ~ .line-menu-1{ 
-transform-origin:top;
-transform:rotate(45deg) translate(10px,0px);
-width:40px;
-background-color:$primary-color;
+    transform-origin:top;
+    transform:rotate(45deg) translate(10px,0px);
+    width:40px;
+    background-color:$primary-color;
 }
 
 
 input[type="checkbox"]:checked ~ .line-menu-2{
-transform-origin:top;
-transform:rotate(-45deg)translate(10px,0px);
-width:40px;
-background-color:$primary-color;
-
-
+    transform-origin:top;
+    transform:rotate(-45deg)translate(10px,0px);
+    width:40px;
+    background-color:$primary-color;
 }
 
 
@@ -143,29 +156,151 @@ background-color:$primary-color;
 
 .nav-top {
     position : absolute;
-    right:20px;
-    top:20px;
+    right:50px;
+    top:50px;
     padding:$padding;
-    background-color: $third-color;
-
+    // background-color: $third-color;
+    transition: background-color 0.7s ease;
 }
 
 .nav-top ul {
-    width:300px;
+    min-width:350px;
     padding:70px 50px;
-    // display:none;
+    display:none;
+
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    // transform-origin: top;
+    // transform: translateY(100%);
 
 }
+
+
+
+// .nav-top ul.visible {
+//     transform: translateY(0);
+// }
 
 .nav-top li {
     padding:$padding;
 }
 
+.nav-top li span {
+    color:#cbc9e2;
+    letter-spacing: 5px;
+}
+
 .nav-top a {
     color:$primary-color;
-    font-size:1em;
+    font-size:1.2em;
+    font-weight:300;
 
 }
+
+
+
+
+// section About
+
+// div.picture {
+//     background:url('../img/picture-emilia/Emilia\ Raffalli-recadre.jpg') no-repeat;
+//     background-size:cover;
+//     width:350px;
+//     height:350px;
+//     // border-radius: 50px 50px;
+// }
+
+// #about {
+//     // background-color: #cbc9e2;
+//     background-color: white;
+
+// }
+
+
+
+.picture-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.picture {
+    background: url('../img/picture-emilia/Emilia\ Raffalli-recadre.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position:relative;
+    z-index:2;
+    // border-radius: 15px; 
+}
+
+.frame {
+    position: absolute;
+    top: 50px; 
+    left: -30px; 
+    width: 330px; 
+    height: 330px; 
+    border: 1.5px solid black; 
+    // background-color: #cbc9e2;
+    // border-radius: 15px; /* ajustez la valeur de la bordure selon vos préférences */
+    z-index: 1;
+}
+
+.text-content {
+    padding: 0 0px 0 80px; 
+    max-width:650px;
+}
+
+
+
+
+p {
+    font-weight:400;
+    font-size:1.4rem;
+    line-height: 1.8em;
+    margin:$margin-tb;
+}
+
+p span {
+    font-size:1rem;
+}
+
+#about p{
+    font-size:1rem;
+
+}
+
+span.name {
+    font-size:1.3rem;
+}
+
+
+
+
+
+
+// section work
+
+
+.card {
+    width:400px;
+    height:350px;
+    background-color: #cbc9e2;
+    margin:20px;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.header-card {
+    height:75%;
+    background-color: black;
+}
+
+
+.body-card {
+    padding:20px;
+}
+
+
 
 
 
@@ -175,8 +310,22 @@ background-color:$primary-color;
 
 h1 {
     margin:$margin-tb;
-    font-size:2.8em;
+    font-size:5rem;
+    // font-family: 'JetBrains Mono', monospace;
+    font-family: 'Montserrat', monospace;
+    // font-family: 'Helvetica', monospace;
+
+
+    line-height: 5rem;;
 }
+
+
+h2 {
+    margin-top:50px;
+    font-size:3.3rem;
+    font-weight:500;
+}
+
 
 
 section, footer {
@@ -187,5 +336,40 @@ section, footer {
 // sections
 
 section {
-    height: 70vh;
+    min-height: 80vh;
 }
+
+
+
+// media screen
+
+@media screen and (max-width:468px) {
+    
+    section, footer, .nav-wrapper {
+        padding:50px 50px;
+    }
+
+
+    h1 {
+        font-size: 2em;
+        line-height: 1.3em;;
+    }
+
+
+
+    .nav-top {
+        position : absolute;
+        right:0px;
+        top:0px;
+        width:100%;
+       }
+
+}
+
+// @media screen and(max-width:768px) {
+
+//     .text-content {
+//         padding: 0px; 
+//         max-width:650px;
+//     }
+// }

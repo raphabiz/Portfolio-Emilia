@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -28,7 +36,8 @@
                 <ul>
                     <li><a href=#logo>Accueil</a></li>
                     <li><a href=#about>À propos</a></li>
-                    <li><a href=#work>Mon travail</a></li>
+                    <li><a href=#work>Travail</a></li>
+                    <li><span>CONTACTEZ MOI</span></li>
                     <li><a href=#contact>Contact</a></li>
                 </ul>
             </nav>
@@ -36,27 +45,65 @@
 
         <section class="introduce">
             <div class="introduce-text">
-                <span>Emilia Raffalli</span><br>
-                <h1>Développeuse Web<br>Junior.</h1>
-                <p>Petit paragraphe d'introduction à compléter par mes soins lorsque j'aurais un peu de temps. J'aime le dev ! Le dev c'est la vie !
+                <span class="name">Emilia Raffalli</span><br>
+                <h1>Développeuse<br>web.</h1>
+                <p>Après dix années d’expérience en tant que graphiste multimédia, j’oriente aujourd’hui ma carrière vers le domaine du web. Ma passion pour les défis techniques, mon désir de partager des idées et ma volonté constante d’apprentissage guident ma transition.
                 </p>
             </div>
             <div id="introduce-picture">
-                <div class="absolute-frame">
-                    carré
-                </div>
+                <p><span>Découvrez le pourquoi et le comment.</span></p>
             </div>
         </section>
     </header>
 
-    <section id="about">
-        <h2>À propos</h2>
-        <p>Petit paragraphe d'introduction à compléter par mes soins lorsque j'aurais un peu de temps. J'aime le dev ! Le dev c'est la vie !</p>
-        <p>Petit paragraphe d'introduction à compléter par mes soins lorsque j'aurais un peu de temps. J'aime le dev ! Le dev c'est la vie !</p>
+    <section id="about" class="flex wrap align-center">
+        <div class='picture-container'>
+            <div class="picture"></div>
+            <div class="frame"></div>
+        </div>
+        
+        <div class='text-content flex-column'>
+            <h2>À propos</h2>
+            <p>Après dix années d’expérience en tant que graphiste multimédia, j’oriente aujourd’hui ma carrière vers le domaine du web. Ma passion pour les défis techniques, mon désir de partager des idées et ma volonté constante d’apprentissage guident ma transition.</p>
+        </div>
     </section>
 
     <section id="work">
         <h2>Mon travail</h2>
+        <div class="all-cards flex wrap">
+            <div class="card">
+                <div class="header-card">
+                    <img src="#">
+                </div>
+                <div class="body-card">
+                    <h3>Projet1</h3>
+                    <a href="#">Lien du projet 1</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="header-card">
+                    <img src="#">
+                </div>
+                <div class="body-card">
+                    <h3>Projet1</h3>
+                    <a href="#">Lien du projet 1</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="header-card">
+                    <img src="#">
+                </div>
+                <div class="body-card">
+                    <h3>Projet1</h3>
+                    <a href="#">Lien du projet 1</a>
+                </div>
+
+            </div>
+        </div>
         
     </section>
 
