@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------ GLOBAL ------ */
 html {
   scroll-behavior: smooth;
@@ -12,14 +13,22 @@ html {
   font-family: "Montserrat", "Helvetica", sans-serif;
 }
 
+.bg-2 {
+  color: #F64C72;
+}
+
+.white {
+  color: #ffffff;
+}
+
 body {
   width: 100%;
   margin: 0;
 }
 
 header {
-  background-image: url("../img/balises-blk-gray.svg");
-  background-color: black; /* Remplacez cette couleur par celle que vous souhaitez */
+  background-image: url("../img/balises-blk-newblue.svg");
+  background-color: #282dc1;
   background-repeat: no-repeat;
   background-position: contain;
   background-size: 120%;
@@ -46,6 +55,10 @@ header * {
   flex-wrap: wrap;
 }
 
+.align-start {
+  align-items: flex-start;
+}
+
 .align-end {
   align-items: flex-end;
 }
@@ -62,6 +75,20 @@ header * {
   justify-content: space-around;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
 /* ------ NAV-TOP ------ */
 .nav-wrapper {
   padding: 50px 120px;
@@ -74,8 +101,12 @@ header * {
   background-size: contain;
   min-width: 80px;
   min-height: 80px;
-  transition: transform 0.5s; /* ajoute une transition pour une animation fluide */
+  transition: transform 0.5s, filter 0.5s; /* ajoute une transition pour une animation fluide */
   transition-duration: 1.5s;
+}
+
+#logo:hover {
+  filter: hue-rotate(240deg);
 }
 
 .line-menu-1 {
@@ -107,33 +138,38 @@ input[type=checkbox]:checked ~ .line-menu-1 {
   transform-origin: top;
   transform: rotate(45deg) translate(10px, 0px);
   width: 40px;
-  background-color: black;
+  background-color: #282dc1;
 }
 
 input[type=checkbox]:checked ~ .line-menu-2 {
   transform-origin: top;
   transform: rotate(-45deg) translate(10px, 0px);
   width: 40px;
-  background-color: black;
+  background-color: #282dc1;
 }
 
 .nav-top {
   position: absolute;
   right: 50px;
   top: 50px;
-  padding: 20px;
+  padding: 60px 60px 0px 0px;
   transition: background-color 0.7s ease;
 }
 
-.nav-top ul {
+.nav-top ul.nt {
   min-width: 350px;
-  padding: 70px 50px;
+  padding: 0px 50px 90px 50px;
   display: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-top li {
-  padding: 20px;
+  padding: 15px;
+  font-size: 1em;
+}
+
+.nav-top ul li ul li {
+  padding-left: 0;
 }
 
 .nav-top li span {
@@ -142,15 +178,41 @@ input[type=checkbox]:checked ~ .line-menu-2 {
 }
 
 .nav-top a {
-  color: black;
+  color: #282dc1;
   font-size: 1.2em;
   font-weight: 300;
 }
 
+ul .social-media li a {
+  color: #F64C72;
+}
+
+ul.social-media i {
+  color: #282dc1;
+  font-size: 1em;
+}
+
+.discover {
+  margin: 50px 0px;
+}
+
+.discover span {
+  margin-bottom: 15px;
+}
+
+.fa-arrow-down-long {
+  font-size: 1.6rem;
+  color: #F64C72;
+}
+
+#about {
+  background-color: #DEF2F1;
+}
+
 .picture-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
 }
 
 .picture {
@@ -164,11 +226,11 @@ input[type=checkbox]:checked ~ .line-menu-2 {
 
 .frame {
   position: absolute;
-  top: 50px;
+  top: 30px;
   left: -30px;
-  width: 330px;
-  height: 330px;
-  border: 1.5px solid black;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #F64C72;
   z-index: 1;
 }
 
@@ -177,15 +239,21 @@ input[type=checkbox]:checked ~ .line-menu-2 {
   max-width: 650px;
 }
 
+#introduce p {
+  color: #ffffff;
+}
+
 p {
-  font-weight: 400;
-  font-size: 1.4rem;
+  font-weight: 300;
+  font-size: 1.3rem;
   line-height: 1.8em;
-  margin: 20px 0px 20px 0px;
+  color: #17252A;
+  margin: 30px 0px;
 }
 
 p span {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 #about p {
@@ -194,18 +262,44 @@ p span {
 
 span.name {
   font-size: 1.3rem;
+  font-weight: 400;
+}
+
+i.fa-brands {
+  background-size: contain;
+  margin-right: 15px;
+  font-size: 1.2em;
+}
+
+i.fa-brands:hover {
+  color: #F64C72;
+}
+
+#work {
+  background-color: #f9f9f9;
+}
+
+.all-cards {
+  margin-left: 0px; /* Compense la marge négative sur le conteneur parent */
+  margin-top: 50px;
 }
 
 .card {
-  width: 400px;
+  width: 300px;
   height: 350px;
-  background-color: #cbc9e2;
-  margin: 20px;
+  background-color: #ffffff;
+  margin: 0 35px 40px 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition-duration: 0.5s;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .header-card {
-  height: 75%;
+  height: 70%;
   background-color: black;
 }
 
@@ -213,16 +307,27 @@ span.name {
   padding: 20px;
 }
 
+.body-card p {
+  font-size: 1rem;
+  margin: 0;
+}
+
 h1 {
   margin: 20px 0px 20px 0px;
   font-size: 5rem;
   font-family: "Montserrat", monospace;
+  color: #ffffff;
   line-height: 5rem;
 }
 
 h2 {
   margin-top: 50px;
-  font-size: 3.3rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #F64C72;
+}
+
+h3 {
   font-weight: 500;
 }
 
@@ -231,7 +336,7 @@ section, footer {
 }
 
 section {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 @media screen and (max-width: 468px) {
@@ -248,4 +353,207 @@ section {
     top: 0px;
     width: 100%;
   }
+  .form-contact {
+    width: 100%;
+  }
+}
+#section-nav {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.nav-bullet {
+  rotate: 45deg;
+  border: none;
+  width: 8px;
+  height: 8px;
+  margin: 15px 5px;
+  cursor: pointer;
+  border: 1px solid #F64C72;
+}
+
+.nav-bullet:not(.current) {
+  background-color: transparent;
+}
+
+.current {
+  background-color: #F64C72;
+}
+
+.form-contact {
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+}
+
+#contact h2, #contact p {
+  text-align: center;
+}
+
+.form-contain-top div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-contact label {
+  margin: 10px 0;
+  padding-left: 10px;
+  color: #282dc1;
+  font-size: 0.8rem;
+}
+
+.form-contact input, .form-contact textarea {
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid #282dc1;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form-contact textarea {
+  height: 100px;
+}
+
+.textarea-contain {
+  width: 100%;
+}
+
+.form-contain-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-contain-top .flex-column {
+  flex: 1;
+}
+
+.form-contain-top .flex-column:nth-child(1) {
+  margin-right: 40px;
+}
+
+.bloc-couleur {
+  width: 250px;
+  height: 50px;
+  border: 1.5px solid #F64C72;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  z-index: 2;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+.to-right:after {
+  right: 100%;
+}
+
+.to-right:hover:after {
+  right: 0;
+}
+
+.couleur-remplissage:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 100%;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+  transition: 0.35s ease-in-out;
+  transition-property: top, bottom, left, right, border-width;
+}
+
+.couleur-remplissage:hover:after {
+  right: 0;
+  background-color: #F64C72;
+  color: #ffffff;
+}
+
+.btn-contain {
+  margin: 20px;
+}
+
+.btn {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  background-color: transparent;
+  border: none;
+  transition-duration: 0.4s;
+  color: #F64C72;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.btn:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #282dc1;
+  min-height: 30vh;
+}
+
+footer ul li, footer ul li a {
+  color: #ffffff;
+}
+
+footer ul li {
+  padding: 15px;
+}
+
+footer .contact {
+  min-width: 250px;
+}
+
+footer a {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 5px 5px 0px;
+  color: #f9f9f9;
+  font-size: 1rem;
+}
+
+footer p span {
+  letter-spacing: 3px;
+}
+
+.nav-bottom {
+  padding: 50px 0px;
+}
+
+ul.social-media-footer li {
+  padding: 0px;
+}
+
+ul.social-media-footer i {
+  color: #ffffff;
+  margin: 20px 0px 20px 20px;
+  text-align: right;
+}
+
+.bottom {
+  border-top: 1px solid #ffffff;
+  padding-top: 30px;
+}
+
+.media-footer ul li {
+  padding: 0;
+  margin: 15px 0px 15px 15px;
 }/*# sourceMappingURL=styles.css.map */

@@ -4,13 +4,24 @@ html {
     scroll-behavior: smooth;
 }
 
+// $primary-color:#3AAFA9;
+// $primary-color:#242582;
+$primary-color:#282dc1;
+$secondColor:#F64C72;
+$bg2:#f9f9f9;
+$bg3:#f896cf;
+$bg4:#DEF2F1;
 
-$primary-color:black;
-$secondary-color:yellow;
+$titleColor:#17252A;
+$pColor1:#ffffff;
+$pColor2:#17252A;
+
+$colorCode:#2B7A78;
 $third-color:#ffffff;
+$sectionColor:#DEF2F1;
 
 $global-padding: 50px 120px ;
-$padding:20px;
+$paddingLi:15px;
 $margin-tb: 20px 0px 20px 0px;
 
 * {
@@ -20,9 +31,16 @@ $margin-tb: 20px 0px 20px 0px;
     text-decoration: none;
     padding:0;
     font-family: 'Montserrat', 'Helvetica',sans-serif;
-    // font-family:'Helvetica',sans-serif;
-
 }
+
+.bg-2 {
+    color:$secondColor;
+}
+
+.white {
+    color:#ffffff;
+}
+
 body {
     width:100%;
     margin:0;
@@ -30,8 +48,8 @@ body {
 // Header
 
 header {
-    background-image: url('../img/balises-blk-gray.svg');
-    background-color: black; /* Remplacez cette couleur par celle que vous souhaitez */
+    background-image: url('../img/balises-blk-newblue.svg');
+    background-color: $primary-color; 
     background-repeat: no-repeat;
     background-position: contain;
     background-size: 120%;
@@ -60,6 +78,10 @@ header *{
     flex-wrap: wrap;
 }
 
+.align-start {
+    align-items: flex-start;
+}
+
 .align-end {
     align-items: flex-end;
 }
@@ -76,9 +98,20 @@ header *{
     justify-content: space-around;
 }
 
+.justify-center {
+    justify-content: center;
+}
 
+.justify-end {
+    justify-content: end;
+}
 
-
+.sticky {
+    position: fixed;
+    // top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
 /* ------ NAV-TOP ------ */
 
@@ -95,9 +128,13 @@ header *{
     background-size:contain;
     min-width:80px;
     min-height:80px;
-    transition: transform 0.5s; /* ajoute une transition pour une animation fluide */
+    transition: transform 0.5s, filter 0.5s; /* ajoute une transition pour une animation fluide */
     transition-duration: 1.5s;
     
+}
+
+#logo:hover {
+    filter: hue-rotate(240deg);
 }
 
 // #logo.rotate {
@@ -112,12 +149,10 @@ header *{
 .line-menu-2 {
     width: 40px;
     height: 2px;
-
 }
 
+
 // Animation menu
-
-
 label.menu {
     cursor: pointer;
 }
@@ -136,7 +171,7 @@ input[type="checkbox"]{
 }
 
 //  ~ div:nth-of-type(1) le premier frère de l'élément input de type cehckbox checké
-input[type="checkbox"]:checked ~ .line-menu-1{ 
+input[type="checkbox"]:checked ~ .line-menu-1 { 
     transform-origin:top;
     transform:rotate(45deg) translate(10px,0px);
     width:40px;
@@ -144,36 +179,30 @@ input[type="checkbox"]:checked ~ .line-menu-1{
 }
 
 
-input[type="checkbox"]:checked ~ .line-menu-2{
+input[type="checkbox"]:checked ~ .line-menu-2 {
     transform-origin:top;
     transform:rotate(-45deg)translate(10px,0px);
     width:40px;
     background-color:$primary-color;
 }
 
-
-
-
 .nav-top {
     position : absolute;
     right:50px;
     top:50px;
-    padding:$padding;
-    // background-color: $third-color;
+    padding:60px 60px 0px 0px;
     transition: background-color 0.7s ease;
 }
 
-.nav-top ul {
+.nav-top ul.nt {
     min-width:350px;
-    padding:70px 50px;
+    padding:0px 50px 90px 50px;
     display:none;
 
     transition: transform 0.3s ease, background-color 0.3s ease;
     // transform-origin: top;
     // transform: translateY(100%);
-
 }
-
 
 
 // .nav-top ul.visible {
@@ -181,7 +210,12 @@ input[type="checkbox"]:checked ~ .line-menu-2{
 // }
 
 .nav-top li {
-    padding:$padding;
+    padding:$paddingLi;
+    font-size:1em;
+}
+
+.nav-top ul li ul li {
+    padding-left:0;
 }
 
 .nav-top li span {
@@ -196,31 +230,43 @@ input[type="checkbox"]:checked ~ .line-menu-2{
 
 }
 
+ul .social-media li a {
+    color:$secondColor;
+}
+
+ul.social-media i {
+    color:$primary-color;
+    font-size:1em;
+}
+
+.discover {
+    margin:50px 0px;
+}
+
+.discover span {
+    margin-bottom:15px;
+}
+
+.fa-arrow-down-long {
+    font-size: 1.6rem;
+    color:$secondColor;
+}
+
+
 
 
 
 // section About
 
-// div.picture {
-//     background:url('../img/picture-emilia/Emilia\ Raffalli-recadre.jpg') no-repeat;
-//     background-size:cover;
-//     width:350px;
-//     height:350px;
-//     // border-radius: 50px 50px;
-// }
 
-// #about {
-//     // background-color: #cbc9e2;
-//     background-color: white;
-
-// }
-
-
+#about {
+    background-color: $bg4;
+}
 
 .picture-container {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 }
 
 .picture {
@@ -235,11 +281,11 @@ input[type="checkbox"]:checked ~ .line-menu-2{
 
 .frame {
     position: absolute;
-    top: 50px; 
+    top: 30px; 
     left: -30px; 
-    width: 330px; 
-    height: 330px; 
-    border: 1.5px solid black; 
+    width: 300px; 
+    height: 300px; 
+    border: 2px solid $secondColor; 
     // background-color: #cbc9e2;
     // border-radius: 15px; /* ajustez la valeur de la bordure selon vos préférences */
     z-index: 1;
@@ -250,83 +296,109 @@ input[type="checkbox"]:checked ~ .line-menu-2{
     max-width:650px;
 }
 
-
-
+#introduce p {
+    color:$pColor1;
+}
 
 p {
-    font-weight:400;
-    font-size:1.4rem;
+    font-weight:300;
+    font-size:1.3rem;
     line-height: 1.8em;
-    margin:$margin-tb;
+    // margin:$margin-tb;
+    color:$pColor2;
+    margin:30px 0px;
 }
 
 p span {
     font-size:1rem;
+    font-weight: 400;
 }
 
 #about p{
     font-size:1rem;
-
 }
 
 span.name {
     font-size:1.3rem;
+    font-weight:400;
 }
 
+i.fa-brands {
+    background-size:contain;
+    margin-right:15px;
+    // background-color:#F64C72;
+    font-size:1.2em;
+}
 
-
+i.fa-brands:hover {
+    color:$secondColor;
+}
 
 
 
 // section work
 
+#work {
+    background-color: $bg2;
+}
+
+.all-cards {
+    margin-left: 0px; /* Compense la marge négative sur le conteneur parent */
+    margin-top:50px;
+}
 
 .card {
-    width:400px;
+    width:300px;
     height:350px;
-    background-color: #cbc9e2;
-    margin:20px;
+    background-color:#ffffff;
+    margin: 0 35px 40px 0;
     // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition-duration: 0.5s;
+}
+
+
+.card:hover {
+    cursor:pointer;
+    transform: scale(1.05);
 }
 
 .header-card {
-    height:75%;
+    height:70%;
     background-color: black;
 }
-
 
 .body-card {
     padding:20px;
 }
 
-
-
-
-
-
+.body-card p {
+    font-size:1rem;
+    margin:0;
+}
 
 // Titles
 
 h1 {
     margin:$margin-tb;
     font-size:5rem;
-    // font-family: 'JetBrains Mono', monospace;
     font-family: 'Montserrat', monospace;
-    // font-family: 'Helvetica', monospace;
-
-
-    line-height: 5rem;;
+    color:$third-color;
+    // text-shadow: 0 0 60px rgba(202,228,225,0.8);
+    line-height: 5rem;
 }
 
 
 h2 {
     margin-top:50px;
-    font-size:3.3rem;
-    font-weight:500;
+    font-size:3rem;
+    font-weight:600;
+    color:$secondColor;
 }
 
-
+h3 {
+    font-weight:500;
+}
 
 section, footer {
     padding:$global-padding;
@@ -336,7 +408,7 @@ section, footer {
 // sections
 
 section {
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 
@@ -352,7 +424,7 @@ section {
 
     h1 {
         font-size: 2em;
-        line-height: 1.3em;;
+        line-height: 1.3em;
     }
 
 
@@ -362,14 +434,234 @@ section {
         right:0px;
         top:0px;
         width:100%;
-       }
+    }
+
+    .form-contact {
+        width:100%;
+
+    }
 
 }
 
-// @media screen and(max-width:768px) {
+// main-nav
 
-//     .text-content {
-//         padding: 0px; 
-//         max-width:650px;
-//     }
-// }
+#section-nav {
+    position: fixed;
+    top: 50%;
+    right:40px;
+    // transform: translateX(-50%);
+    // background-color: #fff;
+    padding: 10px; 
+    z-index: 1000; 
+}
+
+.nav-bullet {
+    rotate:45deg; 
+    border: none;
+    width:8px;
+    height: 8px;
+    margin: 15px 5px; 
+    cursor: pointer;
+    border:1px solid $secondColor; 
+}
+
+.nav-bullet:not(.current) {
+    background-color: transparent; 
+}
+.current { 
+    background-color:$secondColor; 
+}
+
+
+// section contact
+
+.form-contact {
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+}
+
+
+#contact h2, #contact p {
+    text-align: center;
+}
+
+
+.form-contain-top div {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.form-contact label {
+    margin: 10px 0;
+    padding-left:10px;
+    color:$primary-color;
+    font-size:0.8rem;
+}
+
+.form-contact input, .form-contact textarea {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid $primary-color;
+    padding: 10px;
+    margin-bottom: 20px; 
+}
+
+.form-contact textarea {
+    height:100px;
+}
+
+.textarea-contain {
+    width:100%;
+}
+
+.form-contain-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-contain-top .flex-column {
+    flex: 1; 
+}
+
+.form-contain-top .flex-column:nth-child(1) {
+    margin-right: 40px; 
+}
+
+
+
+
+
+// button style hover
+
+.bloc-couleur {
+    width: 250px;
+    height:50px;
+    border: 1.5px solid $secondColor;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    z-index: 2;
+    vertical-align: middle;
+    line-height: 50px; 
+}
+
+.to-right:after {
+    right: 100%;
+}
+
+.to-right:hover:after {
+    right: 0;
+}
+
+.couleur-remplissage:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 100%; 
+    z-index: 1;
+    background-color: rgb(255, 255, 255); 
+    transition: 0.35s ease-in-out;
+    transition-property: top, bottom, left, right, border-width;
+}
+
+.couleur-remplissage:hover:after {
+    right: 0;
+    background-color: $secondColor; 
+    color:#ffffff;
+}
+
+.btn-contain {
+    margin: 20px;
+}
+
+
+.btn {
+    position:absolute;
+    width: 250px;
+    height:50px;
+    left:0;
+    top:0;
+    z-index: 101;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.4s;
+    color:$secondColor;
+    font-size: 0.8em;
+    text-transform:uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.btn:hover {
+    color:#ffffff;
+    cursor: pointer;
+}
+
+
+
+// Footer
+
+footer {
+    background-color: $primary-color;
+    min-height: 30vh;
+}
+
+footer ul li, footer ul li a {
+    color:$third-color;
+}
+
+footer ul li{
+    padding:15px;
+}
+
+footer .contact {
+    min-width:250px;
+}
+
+footer a {
+    color:$third-color;
+    font-weight: 300;
+}
+
+
+footer p {
+    margin:0;
+    padding:5px 5px 5px 0px;
+    color:$bg2;
+    font-size:1rem;
+}
+
+footer p span {
+    letter-spacing: 3px;
+}
+
+
+.nav-bottom {
+    padding:50px 0px;
+}
+
+ul.social-media-footer li {
+    padding:0px;
+}
+ul.social-media-footer i {
+    color:$third-color;
+    margin:20px 0px 20px 20px;
+    text-align: right;
+}
+
+
+.bottom {
+    border-top:1px solid $third-color;
+    padding-top: 30px;;
+}
+
+.media-footer ul li {
+    padding:0;
+    margin:15px 0px 15px 15px;
+
+}
