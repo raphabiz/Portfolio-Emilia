@@ -16,6 +16,25 @@ buttonNavElts.forEach(function(buttonNavElt, index) {
 });
 
 
+function submitForm() {
+    // Get form data
+    var lastName = document.getElementById('lastName').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+
+    // Construct mailto URL 
+    var mailtoLink = 'mailto:e.raffalli@hotmail.fr'
+        + '?subject=' + encodeURIComponent('Nouveau message de ' + lastName)
+        + '&body=' + encodeURIComponent('Nom: ' + lastName + '\n'
+            + 'Email: ' + email + '\n'
+            + 'Objet: ' + subject + '\n'
+            + 'Message: ' + message);
+
+    // Open mailto link
+    window.location.href = mailtoLink;
+}
+
 
 console.log('hello');
 
@@ -70,8 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         menuList.classList.toggle('visible');
     });
 });
-
-
 
 
 

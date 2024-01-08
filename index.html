@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastName = $_POST['lastName'];
@@ -8,11 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $errors = [];
 
-    if (strlen($lastName) <= 3) { // nom doit être supérieur ou égal à 3 lettres
+    if (strlen($lastName) <= 3) { 
         $errors['lastName'] = "Votre nom doit comporter au moins 3 caractères.";
     }
 
-    // Validation de l'adresse email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Veuillez saisir une adresse email valide.";
     }
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-?>
+?> -->
 
 
 
@@ -201,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section id="contact">
         <h2>Me contacter</h2>
         <p> Vous avez une question, un projet ? Écrivez-moi !</p>
-        <form class="flex form-contact flex-column " action="index.php" method="POST">
+        <form class="flex form-contact flex-column ">
             <div class="flex flex-wrap form-contain-top">
                 <div class="flex-column">
                     <label for="lastName">Votre nom</label>
@@ -226,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <div class="btn-contain flex justify-center">
                 <div class="to-right bloc-couleur couleur-remplissage">
-                <button class="btn">Envoyer</button>
+                <button class="btn" type="button" onclick="submitForm()" >Envoyer</button>
             </div>
             
         </form>
